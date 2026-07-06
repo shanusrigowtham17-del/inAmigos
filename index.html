@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="InAmigos Foundation - Empowering Lives, Spreading Compassion across India through education, women empowerment, animal welfare, and environmental sustainability.">
+    <title>InAmigos Foundation | Empowering Lives, Spreading Compassion</title>
+    <style>
+        /* CSS Variables for Warm, Matte Color Palette */
+        :root {
+            --primary-color: #4A7C59; /* Soft Green */
+            --secondary-color: #5C8EAD; /* Soft Blue */
+            --accent-color: #EFA00B; /* Warm Accent */
+            --bg-light: #F8F9FA; /* Off-white background */
+            --bg-white: #FFFFFF;
+            --text-dark: #2C3E50;
+            --text-muted: #606F7B;
+            --shadow-subtle: 0 4px 6px rgba(0, 0, 0, 0.04);
+            --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.08);
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            line-height: 1.2;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2.25rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        .bg-white {
+            background-color: var(--bg-white);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: var(--shadow-subtle);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 80px;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-color);
+            color: var(--bg-white) !important;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #3A6347;
+            transform: translateY(-2px);
+        }
+
+        .btn-accent {
+            background-color: var(--accent-color);
+        }
+
+        .btn-accent:hover {
+            background-color: #D68F09;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--secondary-color);
+            padding: 8rem 2rem;
+            text-align: center;
+            color: var(--bg-white);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--bg-white);
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h3 {
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+        }
+
+        .stat-card h4 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.25rem;
+        }
+
+        /* Mission, Vision, Values */
+        .mvv-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .mvv-card {
+            background-color: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-subtle);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .mvv-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .mvv-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--bg-white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-subtle);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background-color: #E2E8F0;
+        }
+
+        .project-content {
+            padding: 2rem;
+            flex-grow: 1;
+        }
+
+        .project-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: rgba(74, 124, 89, 0.1);
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-subtle);
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background-color: var(--primary-color);
+            color: var(--bg-white);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            color: var(--bg-white);
+        }
+
+        .cta-section h2::after {
+            background-color: var(--accent-color);
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1A202C;
+            color: #A0AEC0;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--bg-white);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #A0AEC0;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .footer-col a:hover {
+            color: var(--bg-white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1rem;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-content {
+                order: 2;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <div class="logo">InAmigos Foundation</div>
+            <div class="nav-links">
+                <a href="#about">About Us</a>
+                <a href="#projects">Our Projects</a>
+                <a href="#impact">Impact</a>
+                <a href="#volunteer" class="btn">Volunteer</a>
+                <a href="#donate" class="btn btn-accent">Donate</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Empowering Lives, Spreading Compassion</h1>
+            <p>Join InAmigos Foundation in bringing positive change through food distribution, education, women empowerment, animal welfare, and environmental action across India.</p>
+            <div class="btn-group">
+                <a href="#projects" class="btn">Explore Our Projects</a>
+                <a href="#donate" class="btn btn-accent">Make a Difference Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-white">
+        <div class="container about-grid">
+            <div class="about-content">
+                <h3>Who We Are</h3>
+                <p>Founded on September 23, 2020, by Mr. Govind Shukla, InAmigos Foundation is a Section 8 registered non-profit organization based in Chhattisgarh. With a pan-India presence, we are committed to uplifting marginalized communities and fostering inclusive development.</p>
+                <p>Recognized by NITI Aayog and holding CSR-1, 80G, 12A, and IAF ISO 9001:2015 certifications, our transparent operations ensure that every initiative reaches the right audience to create measurable social impact.</p>
+                
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <h4>4+</h4>
+                        <p>Years of Service</p>
+                    </div>
+                    <div class="stat-card">
+                        <h4>6</h4>
+                        <p>Flagship Projects</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="https://placehold.co/600x500/F8F9FA/5C8EAD?text=Community+Outreach" alt="InAmigos Foundation Team Volunteering" style="border-radius: 20px; box-shadow: var(--shadow-subtle);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission, Vision, Values -->
+    <section class="container">
+        <h2>Our Core Philosophy</h2>
+        <div class="mvv-grid">
+            <div class="mvv-card">
+                <div class="mvv-icon">🎯</div>
+                <h3>Our Mission</h3>
+                <p>To bring positive change through dedicated initiatives focused on food, education, women's empowerment, animal welfare, and environmental action.</p>
+            </div>
+            <div class="mvv-card">
+                <div class="mvv-icon">👁️</div>
+                <h3>Our Vision</h3>
+                <p>A more inclusive, compassionate, and empowered society driven by collective action, where basic necessities and opportunities are accessible to all.</p>
+            </div>
+            <div class="mvv-card">
+                <div class="mvv-icon">⭐</div>
+                <h3>Our Values</h3>
+                <p>We are rooted in compassion, transparency, accountability, and the belief of placing service before self in every community we touch.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-white">
+        <div class="container">
+            <h2>Our Key Initiatives</h2>
+            <div class="projects-grid">
+                <!-- Project Seva -->
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/E2E8F0/606F7B?text=Project+Seva" alt="Project Seva" class="project-img">
+                    <div class="project-content">
+                        <span class="project-tag">Humanitarian Aid</span>
+                        <h3>Project Seva</h3>
+                        <p>Serving humanity with compassion by distributing freshly prepared meals and clothing to daily wage workers and underprivileged communities.</p>
+                    </div>
+                </div>
+
+                <!-- Project Bachpanshala -->
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/E2E8F0/606F7B?text=Project+Bachpanshala" alt="Project Bachpanshala" class="project-img">
+                    <div class="project-content">
+                        <span class="project-tag">Education</span>
+                        <h3>Project Bachpanshala</h3>
+                        <p>Nurturing young minds by ensuring quality education, free learning materials, and mentorship for children in low-income areas.</p>
+                    </div>
+                </div>
+
+                <!-- Project Udaan -->
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/E2E8F0/606F7B?text=Project+Udaan" alt="Project Udaan" class="project-img">
+                    <div class="project-content">
+                        <span class="project-tag">Women Empowerment</span>
+                        <h3>Project Udaan</h3>
+                        <p>Empowering women towards a brighter future through skill development, financial literacy, and entrepreneurship training in rural India.</p>
+                    </div>
+                </div>
+
+                <!-- Project Jeev -->
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/E2E8F0/606F7B?text=Project+Jeev" alt="Project Jeev" class="project-img">
+                    <div class="project-content">
+                        <span class="project-tag">Animal Welfare</span>
+                        <h3>Project Jeev</h3>
+                        <p>Extending compassion beyond humans by providing food, shelter, rescue, and medical treatment for stray and injured animals.</p>
+                    </div>
+                </div>
+
+                <!-- Project Prakriti -->
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/E2E8F0/606F7B?text=Project+Prakriti" alt="Project Prakriti" class="project-img">
+                    <div class="project-content">
+                        <span class="project-tag">Environment</span>
+                        <h3>Project Prakriti</h3>
+                        <p>Advocating for sustainability through massive tree plantation drives, waste reduction campaigns, and eco-friendly community education.</p>
+                    </div>
+                </div>
+
+                <!-- Project Vikas -->
+                <div class="project-card">
+                    <img src="https://placehold.co/600x400/E2E8F0/606F7B?text=Project+Vikas" alt="Project Vikas" class="project-img">
+                    <div class="project-content">
+                        <span class="project-tag">Skill Development</span>
+                        <h3>Project Vikas</h3>
+                        <p>Enhancing employability by providing targeted skill development programs and internships for youth across various professional fields.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="container">
+        <h2>Our Measurable Impact</h2>
+        <div class="mvv-grid">
+            <div class="mvv-card">
+                <h3 style="color: var(--primary-color); font-size: 2.5rem;">50,000+</h3>
+                <p>Meals and clothing distributed to those in need through Project Seva.</p>
+            </div>
+            <div class="mvv-card">
+                <h3 style="color: var(--primary-color); font-size: 2.5rem;">900+</h3>
+                <p>Girls and women empowered with education and livelihood training.</p>
+            </div>
+            <div class="mvv-card">
+                <h3 style="color: var(--primary-color); font-size: 2.5rem;">30,000+</h3>
+                <p>Interns trained and upskilled under Project Vikas over the last 4 years.</p>
+            </div>
+            <div class="mvv-card">
+                <h3 style="color: var(--primary-color); font-size: 2.5rem;">20,000+</h3>
+                <p>Saplings planted to combat deforestation under Project Prakriti.</p>
+            </div>
+            <div class="mvv-card">
+                <h3 style="color: var(--primary-color); font-size: 2.5rem;">50+</h3>
+                <p>Stray animals fed, treated, and rescued daily by our volunteers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="bg-white">
+        <div class="container">
+            <h2>Moments From The Ground</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://placehold.co/400x300/F8F9FA/606F7B?text=Food+Distribution" alt="Food Distribution"></div>
+                <div class="gallery-item"><img src="https://placehold.co/400x300/F8F9FA/606F7B?text=Classroom+Session" alt="Classroom Session"></div>
+                <div class="gallery-item"><img src="https://placehold.co/400x300/F8F9FA/606F7B?text=Tree+Plantation" alt="Tree Plantation"></div>
+                <div class="gallery-item"><img src="https://placehold.co/400x300/F8F9FA/606F7B?text=Animal+Rescue" alt="Animal Rescue"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials (Placeholder Content) -->
+    <section class="container">
+        <h2>Voices of Hope</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Volunteering with Project Seva taught me the true meaning of empathy. Seeing the relief on someone's face after receiving a warm meal is an experience I will never forget."</p>
+                <p class="testimonial-author">— Foundation Volunteer</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Project Udaan gave me the financial literacy and skills I needed to start my own small business. I am now able to support my family independently."</p>
+                <p class="testimonial-author">— Beneficiary, Project Udaan</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Partnering with InAmigos Foundation for our CSR initiatives was seamless. Their transparency and on-ground execution are truly commendable."</p>
+                <p class="testimonial-author">— Corporate CSR Partner</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Volunteer & Donate -->
+    <section id="volunteer" class="cta-section">
+        <div class="container">
+            <h2>Step In, Stand Out, Create Impact</h2>
+            <p>We believe in the power of collective action. Whether you want to develop on-ground leadership skills as a volunteer, or support our causes financially, your contribution matters.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                <a href="#" class="btn" style="background-color: var(--bg-white); color: var(--primary-color) !important;">Become a Volunteer</a>
+                <a href="#donate" class="btn btn-accent">Make a Donation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>InAmigos Foundation</h4>
+                    <p>A Section 8 registered non-profit organization committed to creating lasting social impact across India.</p>
+                    <p><strong>80G & 12A Certified</strong></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="#about">About Us</a>
+                    <a href="#projects">Our Projects</a>
+                    <a href="#impact">Our Impact</a>
+                    <a href="#volunteer">Join as Volunteer</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p>📍 Based in Chhattisgarh, India</p>
+                    <p>✉️ info@inamigosfoundation.org.in</p>
+                    <p>🌐 inamigosfoundation.org.in</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 InAmigos Foundation. All rights reserved. Designed with compassion.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
