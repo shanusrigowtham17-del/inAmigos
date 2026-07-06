@@ -6,23 +6,21 @@
     <meta name="description" content="InAmigos Foundation - Empowering Lives, Spreading Compassion across India through education, women empowerment, animal welfare, and environmental sustainability.">
     <title>InAmigos Foundation | Empowering Lives, Spreading Compassion</title>
     <style>
-        /* CSS Variables for 80% White, 20% Heart Red Theme */
         :root {
-            --primary-red: #D32F2F; /* Heart Red */
-            --bg-white: #FFFFFF; /* 80% dominant white */
+            --primary-red: #D32F2F;
+            --bg-white: #FFFFFF;
             --bg-off-white: #F9F9F9;
             --text-dark: #2C3E50;
             --text-muted: #576574;
             --text-white: #FFFFFF;
             --border-light: #E0E0E0;
             --shadow-subtle: 0 4px 6px rgba(0, 0, 0, 0.04);
-            --shadow-hover: 0 10px 15px rgba(211, 47, 47, 0.08); /* Red tint on hover */
+            --shadow-hover: 0 10px 15px rgba(211, 47, 47, 0.08);
             --radius-md: 12px;
             --radius-lg: 20px;
             --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
-        /* Reset & Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -36,7 +34,7 @@
         body {
             font-family: var(--font-main);
             color: var(--text-dark);
-            background-color: var(--bg-white); /* Main background is white */
+            background-color: var(--bg-white);
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
         }
@@ -55,7 +53,6 @@
             display: block;
         }
 
-        /* Typography */
         h1, h2, h3, h4 {
             line-height: 1.2;
             color: var(--text-dark);
@@ -69,7 +66,6 @@
             position: relative;
         }
 
-        /* A decorative line under headings, in primary red */
         h2::after {
             content: '';
             display: block;
@@ -85,7 +81,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Layout */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -96,7 +91,6 @@
             padding: 6rem 0;
         }
 
-        /* Header & Navigation */
         header {
             background-color: var(--bg-white);
             box-shadow: var(--shadow-subtle);
@@ -115,7 +109,6 @@
             margin: 0 auto;
         }
 
-        /* Logo and Brand Name */
         .brand {
             display: flex;
             align-items: center;
@@ -123,7 +116,7 @@
         }
 
         .logo-img {
-            height: 60px; /* Adjust based on logo proportions */
+            height: 60px;
             width: auto;
         }
 
@@ -150,7 +143,6 @@
             color: var(--primary-red);
         }
 
-        /* Buttons (Heart Red by default) */
         .btn {
             display: inline-block;
             padding: 0.8rem 1.8rem;
@@ -164,12 +156,11 @@
         }
 
         .btn:hover {
-            background-color: #B71C1C; /* Darker red */
+            background-color: #B71C1C;
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(183, 28, 28, 0.3);
         }
 
-        /* Specific style for volunteer, making donate the distinct call to action */
         .nav-links .btn-volunteer {
             background-color: var(--bg-white);
             color: var(--primary-red) !important;
@@ -181,7 +172,6 @@
             color: #B71C1C !important;
         }
 
-        /* Hero / Sliding Image Gallery - PURE CSS */
         .hero-gallery {
             width: 100%;
             height: 80vh;
@@ -191,9 +181,9 @@
 
         .slides {
             display: flex;
-            width: 400%; /* Number of slides * 100% */
+            width: 400%;
             height: 100%;
-            animation: slide 20s infinite; /* Timing for 4 slides */
+            animation: slide 20s infinite;
         }
 
         .slide {
@@ -209,7 +199,6 @@
             object-position: center;
         }
 
-        /* Gradient overlay for text readability */
         .slide-overlay {
             position: absolute;
             bottom: 0;
@@ -238,20 +227,18 @@
             margin-bottom: 2.5rem;
         }
 
-        /* CSS Keyframe Animation for Sliding */
         @keyframes slide {
             0% { transform: translateX(0%); }
-            20% { transform: translateX(0%); } /* Wait on first slide */
-            25% { transform: translateX(-100%); } /* Slide to second */
-            45% { transform: translateX(-100%); } /* Wait on second */
-            50% { transform: translateX(-200%); } /* Slide to third */
-            70% { transform: translateX(-200%); } /* Wait on third */
-            75% { transform: translateX(-300%); } /* Slide to fourth */
-            95% { transform: translateX(-300%); } /* Wait on fourth */
-            100% { transform: translateX(0%); } /* Return to start */
+            20% { transform: translateX(0%); }
+            25% { transform: translateX(-100%); }
+            45% { transform: translateX(-100%); }
+            50% { transform: translateX(-200%); }
+            70% { transform: translateX(-200%); }
+            75% { transform: translateX(-300%); }
+            95% { transform: translateX(-300%); }
+            100% { transform: translateX(0%); }
         }
 
-        /* About Section */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -270,7 +257,6 @@
             height: auto;
         }
 
-        /* Projects Section */
         #projects .container h2 {
             margin-bottom: 4rem;
         }
@@ -322,7 +308,7 @@
         .project-tag {
             display: inline-block;
             padding: 0.3rem 1rem;
-            background-color: #FFF1F1; /* Soft red tint */
+            background-color: #FFF1F1;
             color: var(--primary-red);
             border-radius: 20px;
             font-size: 0.85rem;
@@ -330,7 +316,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Impact Statistics */
         .impact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -360,7 +345,6 @@
             font-size: 0.9rem;
         }
 
-        /* Gallery Section */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -385,7 +369,6 @@
             object-fit: cover;
         }
 
-        /* Testimonials Section (Icons removed, rely on clean layout) */
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -401,7 +384,6 @@
             position: relative;
         }
 
-        /* Quote mark decorative flourishes in light red */
         .testimonial-card::before {
             content: '“';
             position: absolute;
@@ -426,7 +408,6 @@
             color: var(--text-dark);
         }
 
-        /* Final Call to Action Section */
         .cta-combined {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -452,16 +433,14 @@
             box-shadow: 0 4px 15px rgba(211, 47, 47, 0.05);
         }
 
-        /* Special red heading for the CTA card */
         .cta-card h3 {
             color: var(--primary-red);
             font-size: 1.75rem;
             margin-bottom: 1rem;
         }
 
-        /* Footer */
         footer {
-            background-color: #1A202C; /* Deep charcoal for main footer */
+            background-color: #1A202C;
             color: #A0AEC0;
             padding: 5rem 0 3rem;
         }
@@ -480,7 +459,6 @@
             position: relative;
         }
 
-        /* Footers have a smaller decorative line in heart red */
         .footer-col h4::after {
             content: '';
             display: block;
@@ -509,7 +487,6 @@
             font-size: 0.9rem;
         }
 
-        /* Contact Details Section, with icons REMOVED and typography emphasized */
         .contact-details {
             margin-top: 2rem;
         }
@@ -530,7 +507,6 @@
             color: #A0AEC0;
         }
 
-        /* Responsive Design */
         @media (max-width: 992px) {
             .hero-gallery { height: 60vh; }
             .slide-caption h1 { font-size: 2.75rem; }
@@ -555,7 +531,6 @@
 </head>
 <body>
 
-    <!-- Header & Navigation -->
     <header>
         <nav>
             <a href="#" class="brand">
@@ -572,11 +547,9 @@
         </nav>
     </header>
 
-    <!-- Hero Section / Sliding Gallery -->
     <section class="hero-gallery">
         <div class="slides">
             
-            <!-- Slide 1: Education -->
             <div class="slide">
                 <img src="https://inamigosfoundation.org.in/public/storage/gallery/1738238755.JPG" alt="Project Bachpanshala - Empowering children through education">
                 <div class="slide-overlay">
@@ -588,7 +561,6 @@
                 </div>
             </div>
 
-            <!-- Slide 2: Women Empowerment -->
             <div class="slide">
                 <img src="https://miro.medium.com/v2/resize:fit:1400/1*-jDCDTW877XrGZ3-1vEu3g.png" alt="Project Udaan - Supporting women entrepreneurs">
                 <div class="slide-overlay">
@@ -600,7 +572,6 @@
                 </div>
             </div>
 
-            <!-- Slide 3: Animal Welfare -->
             <div class="slide">
                 <img src="https://miro.medium.com/0*xZEmMvYDiQGtx19d.jpg" alt="Project Jeev - Compassionate care for stray animals">
                 <div class="slide-overlay">
@@ -612,7 +583,6 @@
                 </div>
             </div>
 
-            <!-- Slide 4: Environment -->
             <div class="slide">
                 <img src="https://inamigosfoundation.org.in/public/storage/post/1738237948.jpeg" alt="Project Prakriti - Tree planting drive">
                 <div class="slide-overlay">
@@ -627,7 +597,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <div class="container about-grid">
             <div class="about-image">
@@ -642,13 +611,11 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" style="background-color: var(--bg-off-white);">
         <div class="container">
             <h2>Our Core Initiatives</h2>
             <div class="projects-grid">
                 
-                <!-- Project Seva -->
                 <div class="project-card">
                     <div class="project-img-wrapper"><img src="https://inamigosfoundation.org.in/public/storage/gallery/1738054440.jpg" alt="Volunteers serving warm meals."></div>
                     <div class="project-content">
@@ -658,7 +625,6 @@
                     </div>
                 </div>
 
-                <!-- Project Bachpanshala -->
                 <div class="project-card">
                     <div class="project-img-wrapper"><img src="https://inamigosfoundation.org.in/public/storage/gallery/1738238755.JPG" alt="A volunteer mentoring children in an open classroom."></div>
                     <div class="project-content">
@@ -668,7 +634,6 @@
                     </div>
                 </div>
 
-                <!-- Project Udaan -->
                 <div class="project-card">
                     <div class="project-img-wrapper"><img src="https://miro.medium.com/v2/resize:fit:1400/1*-jDCDTW877XrGZ3-1vEu3g.png" alt="A group of women entrepreneurs at a skill workshop."></div>
                     <div class="project-content">
@@ -682,7 +647,6 @@
         </div>
     </section>
 
-    <!-- Impact Section -->
     <section id="impact">
         <div class="container">
             <h2>Making a Tangible Difference</h2>
@@ -707,7 +671,6 @@
         </div>
     </section>
 
-    <!-- Gallery Section (Actual Photos) -->
     <section style="background-color: var(--bg-off-white);">
         <div class="container">
             <h2>Our Impact in Action</h2>
@@ -719,7 +682,6 @@
         </div>
     </section>
 
-    <!-- Support Us / CTA Section -->
     <section id="support">
         <div class="container cta-combined">
             <div class="cta-content">
@@ -738,7 +700,6 @@
         </div>
     </section>
 
-    <!-- Footer (CHARCOAL with RED ACCENTS) -->
     <footer>
         <div class="container footer-grid">
             <div class="footer-col">
